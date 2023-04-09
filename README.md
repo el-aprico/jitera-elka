@@ -23,6 +23,7 @@ cp .env.example .env
 4. Run command:
 ```console
 composer install // to install application package dependency
+php artisan key:generate // to generate encryption key 
 php artisan migrate // to migrate the database.
 php artisan db:seed // to insert initial data.
 php artisan serve // to run your application instantly with port 8000.
