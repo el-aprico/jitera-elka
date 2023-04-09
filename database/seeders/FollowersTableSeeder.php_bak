@@ -1,0 +1,34 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Follower;
+use Faker\Factory as Faker;
+
+class FollowersTableSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = Faker::create();
+
+        // Generate followers table
+        $users = User::pluck('id')->all();
+        foreach ($users as $userId) {
+            $followerId = $faker->randomElement($users);
+            while ($followerId == $userId) {
+                $followerId = $faker->randomElement($users);
+            }
+            Follower::create([
+                'user_id' => $userId,
+                'follower_user_id' => $followerId,
+            ]);
+        }
+    }
+}

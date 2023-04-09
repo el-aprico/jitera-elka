@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "9fba0647-d489-41b3-943f-3487fefc95bb",
+		"name": "Jitera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13091311"
+	},
+	"item": [
+		{
+			"name": "List all user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all user data with address and company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/details",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/{{user_id}}",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show user data with address and company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/{{user_id}}/details",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"{{user_id}}",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Following List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/{{user_id}}/following",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"{{user_id}}",
+						"following"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follower List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/{{user_id}}/followers",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"{{user_id}}",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follower List By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/users/{{user_id}}/followers/{{follower_name}}",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"{{user_id}}",
+						"followers",
+						"{{follower_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Following user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": {{user_id}},\n    \"following_user_id\": {{following_user_id}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/follow",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/unfollow/{{user_id}}/{{following_user_id}}",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"unfollow",
+						"{{user_id}}",
+						"{{following_user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove follower",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/{{api_version}}/follower/{{user_id}}/{{following_user_id}}",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"follower",
+						"{{user_id}}",
+						"{{following_user_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
